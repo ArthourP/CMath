@@ -20,11 +20,11 @@ extern void
 
 PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData)
 {
-   pAMXFunctions = ppData[PLUGIN_DATA_AMX_EXPORTS];
-   logprintf = (logprintf_t)ppData[PLUGIN_DATA_LOGPRINTF];
+   	pAMXFunctions = ppData[PLUGIN_DATA_AMX_EXPORTS];
+   	logprintf = (logprintf_t)ppData[PLUGIN_DATA_LOGPRINTF];
 
-   logprintf("CMath plugin loaded - Jelly23");
-   return 1;
+	logprintf("CMath plugin loaded - Jelly23");
+   	return 1;
 }
 
 PLUGIN_EXPORT void PLUGIN_CALL Unload()
@@ -111,7 +111,7 @@ cell AMX_NATIVE_CALL cc_modf(AMX* amx, cell* params)
 	amx_ctof(retn) = modff(amx_ctof(params[1]), &conv);
 	amx_GetAddr(amx, params[2], &addr2);
 	*addr2 = amx_ftoc(conv);
-    return amx_ftoc(retn);
+        return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_exp2(AMX* amx, cell* params)
@@ -260,15 +260,15 @@ AMX_NATIVE_INFO projectNatives[] =
 
 PLUGIN_EXPORT unsigned int PLUGIN_CALL Supports()
 {
-   return SUPPORTS_VERSION | SUPPORTS_AMX_NATIVES;
+   	return SUPPORTS_VERSION | SUPPORTS_AMX_NATIVES;
 }
 
 PLUGIN_EXPORT int PLUGIN_CALL AmxLoad(AMX *amx)
 {
-   return amx_Register(amx, projectNatives, -1);
+   	return amx_Register(amx, projectNatives, -1);
 }
 
 PLUGIN_EXPORT int PLUGIN_CALL AmxUnload(AMX *amx)
 {
-   return AMX_ERR_NONE;
+   	return AMX_ERR_NONE;
 }
