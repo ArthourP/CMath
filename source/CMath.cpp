@@ -102,7 +102,7 @@ cell AMX_NATIVE_CALL cc_modf(AMX* amx, cell* params)
 	float retn = modff(amx_ctof(params[1]), &conv);
 	amx_GetAddr(amx, params[2], &addr2);
 	*addr2 = amx_ftoc(conv);
-    return amx_ftoc(retn);
+    	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_exp2(AMX* amx, cell* params)
