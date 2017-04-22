@@ -34,57 +34,50 @@ PLUGIN_EXPORT void PLUGIN_CALL Unload()
 
 cell AMX_NATIVE_CALL cc_cosh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = coshf(amx_ctof(params[1]));
+	float retn = coshf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_sinh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = sinhf(amx_ctof(params[1]));
+	float retn = sinhf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_tanh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = tanhf(amx_ctof(params[1]));
+	float retn = tanhf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_acosh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = acoshf(amx_ctof(params[1]));
+	float retn = acoshf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_asinh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = asinhf(amx_ctof(params[1]));
+	float retn = asinhf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_atanh(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = atanhf(amx_ctof(params[1]));
+	float retn = atanhf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_exp(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = expf ( amx_ctof(params[1]));
+	float retn = expf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_frexp(AMX* amx, cell* params)
 {
-	int conv; cell* retn = 0; cell* addr2 = 0;
-	amx_ctof(retn) = frexpf(amx_ctof(params[1]), &conv);
+	int conv; cell* addr2 = 0;
+	float retn = frexpf(amx_ctof(params[1]), &conv);
 	amx_GetAddr(amx, params[2], &addr2);
 	*addr2 = conv;
 	return amx_ftoc(retn);
@@ -92,39 +85,35 @@ cell AMX_NATIVE_CALL cc_frexp(AMX* amx, cell* params)
 
 cell AMX_NATIVE_CALL cc_ldexp(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = ldexpf (amx_ctof(params[1]) , params[2]);
+	float retn = ldexpf(amx_ctof(params[1]), params[2]);
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_log10(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = log10f(amx_ctof(params[1]));
+	float retn = log10f(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_modf(AMX* amx, cell* params)
 {
 
-	float conv; cell* addr2 = 0; cell* retn = 0;
-	amx_ctof(retn) = modff(amx_ctof(params[1]), &conv);
+	float conv; cell* addr2 = 0;
+	float retn = modff(amx_ctof(params[1]), &conv);
 	amx_GetAddr(amx, params[2], &addr2);
 	*addr2 = amx_ftoc(conv);
-        return amx_ftoc(retn);
+    return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_exp2(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = exp2f(amx_ctof(params[1]));
+	float retn = exp2f(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_expm1(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = expm1f(amx_ctof(params[1]));
+	float retn = expm1f(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
@@ -135,64 +124,56 @@ cell AMX_NATIVE_CALL cc_ilogb(AMX* amx, cell* params)
 
 cell AMX_NATIVE_CALL cc_log1p(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = log1pf(amx_ctof(params[1]));
+	float retn = log1pf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_log2(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = log2f(amx_ctof(params[1]));
+	float retn = log2f(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_logb(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = logbf(amx_ctof(params[1]));
+	float retn = logbf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_scalbn(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = scalbnf(amx_ctof(params[1]), params[2]);
+	float retn = scalbnf(amx_ctof(params[1]), params[2]);
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_cbrt(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = cbrtf(amx_ctof(params[1]));
+	float retn = cbrtf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_hypot(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = hypotf(amx_ctof(params[1]), amx_ctof(params[2]));
+	float retn = hypotf(amx_ctof(params[1]), amx_ctof(params[2]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_tgamma(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = tgammaf(amx_ctof(params[1]));
+	float retn = tgammaf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_lgamma(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = lgammaf(amx_ctof(params[1]));
+	float retn = lgammaf(amx_ctof(params[1]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_remquo(AMX* amx, cell* params)
 {
-	cell* retn = 0; cell* addr3 = 0; int conv;
-	amx_ctof(retn) = remquof(amx_ctof(params[1]), amx_ctof(params[2]), &conv);
+	cell* addr3 = 0; int conv;
+	float retn = remquof(amx_ctof(params[1]), amx_ctof(params[2]), &conv);
 	amx_GetAddr(amx, params[3], &addr3);
 	*addr3 = conv;
 	return amx_ftoc(retn);
@@ -200,29 +181,25 @@ cell AMX_NATIVE_CALL cc_remquo(AMX* amx, cell* params)
 
 cell AMX_NATIVE_CALL cc_copysign(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = copysignf(amx_ctof(params[1]), amx_ctof(params[2]));
+	float retn = copysignf(amx_ctof(params[1]), amx_ctof(params[2]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_fdim(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = fdimf(amx_ctof(params[1]), amx_ctof(params[2]));
+	float retn = fdimf(amx_ctof(params[1]), amx_ctof(params[2]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_fmax(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = fmaxf(amx_ctof(params[1]), amx_ctof(params[2]));
+	float retn = fmaxf(amx_ctof(params[1]), amx_ctof(params[2]));
 	return amx_ftoc(retn);
 }
 
 cell AMX_NATIVE_CALL cc_fmin(AMX* amx, cell* params)
 {
-	cell* retn = 0;
-	amx_ctof(retn) = fminf(amx_ctof(params[1]), amx_ctof(params[2]));
+	float retn = fminf(amx_ctof(params[1]), amx_ctof(params[2]));
 	return amx_ftoc(retn);
 }
 
